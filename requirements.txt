@@ -1,2 +1,3 @@
 ruamel.yaml==0.15.81
 python-crontab==2.3.5
+requests
