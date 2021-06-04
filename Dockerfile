@@ -10,10 +10,6 @@ WORKDIR /app
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     cron \
-    ffmpeg \
-    imagemagick \
-    gifsicle \
-    libav-tools \
     rsyslog \
     logrotate && \
     apt-get clean && \
