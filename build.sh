@@ -3,4 +3,4 @@ set -ex
 USERNAME=fronzbot
 IMAGE=python
 
-docker build -t $USERNAME/$IMAGE:latest .
+docker build --no-cache --network=host -t $USERNAME/$IMAGE:latest .
