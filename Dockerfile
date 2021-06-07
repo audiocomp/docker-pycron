@@ -7,10 +7,13 @@ VOLUME /share
 RUN mkdir /app
 WORKDIR /app
 
-RUN apk update
-RUN apk add rsyslog
-RUN apk add logrotate
-
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    cron \
+    rsyslog \
+    logrotate && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
