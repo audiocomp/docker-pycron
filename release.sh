@@ -1,6 +1,6 @@
 set -ex
 
-USERNAME=audiocomp
+USERNAME=fronzbot
 IMAGE=python
 
 git pull origin master
