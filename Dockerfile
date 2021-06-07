@@ -1,5 +1,5 @@
-FROM python:3.7-slim-stretch
-LABEL maintainer="Kevin Fronczak <kfronczak@gmail.com>"
+FROM python:3.9-slim-buster
+LABEL maintainer="Steve Brown https://github.com/audiocomp"
 
 VOLUME /work
 VOLUME /share

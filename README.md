@@ -3,7 +3,7 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/fronzbot/pycron.svg)
 ![Github tag](https://img.shields.io/github/tag-date/fronzbot/docker-pycron.svg)
 
-This is a generic python docker used to run custom scripts and what not.  [Docker Hub URL](https://hub.docker.com/r/fronzbot/pycron)
+This is a generic python docker used to run custom scripts and what not.  [Docker Hub URL](https://hub.docker.com/r/audiocomp/pycron)
 
 ## Usage
 
@@ -11,9 +11,6 @@ Please note that this docker uses Python 3.7 and has the following packages inst
 
 ```
 cron
-ffmpeg
-imagemagick
-gifsicle
 logrotate
 ```
 
@@ -83,4 +80,5 @@ By default, the following python packages are installed:
 ```
 python-crontab
 ruamel.yaml
+requests
 ```
