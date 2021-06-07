@@ -1,10 +1,9 @@
-#!/bin/bash
-echo 'hello'
+#!/bin/sh
 service rsyslog start
 service cron restart
 crontab -r
 
-Install user-generated requirements files
+# Install user-generated requirements files
 if [ -e /work/my_requirements.txt ]
 then
     pip install -r /work/my_requirements.txt

@@ -7,14 +7,17 @@ VOLUME /share
 RUN mkdir /app
 WORKDIR /app
 
-RUN mkdir -p /etc/cron.d/
+RUN mkdir -p /etc/cron.d/pycron
 COPY system/rsyslog.conf /etc/rsyslog.conf
 
 RUN apk update
-RUN apk add --no-cache bash
-RUN apk add --no-cache rsyslog
-RUN apk add --no-cache logrotate
 RUN apk add --no-cache busybox-initscripts
+RUN apk add --no-cache  openrc
+RUN apk add --no-cache  rsyslog
+RUN apk add --no-cache  logrotate
+
+RUN rc-update add rsyslog boot
+RUN rc-update add crond boot
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
