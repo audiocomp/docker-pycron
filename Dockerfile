@@ -7,13 +7,10 @@ VOLUME /share
 RUN mkdir /app
 WORKDIR /app
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    cron \
-    rsyslog \
-    logrotate && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk update
+RUN apk add rsyslog
+RUN apk add logrotate
+
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
