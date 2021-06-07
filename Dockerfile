@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM python:3.9-alpine3.13
 LABEL maintainer="Steve Brown https://github.com/audiocomp"
 
 VOLUME /work
