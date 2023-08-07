@@ -7,10 +7,11 @@ This is a generic python docker used to run custom scripts and what not.  [Docke
 
 ## Usage
 
-Please note that this docker uses Python 3.7 and has the following packages installed:
+Please note that this docker uses Python 3.11-slim-bookworm and has the following packages installed:
 
 ```
 cron
+rsyslog
 logrotate
 ```
 
@@ -78,7 +79,7 @@ Each line represents a package and you can add as many as you'd like!
 By default, the following python packages are installed:
 
 ```
-python-crontab
-ruamel.yaml
-requests
+ruamel.yaml==0.17.32
+python-crontab==3.0.0
+requests==2.31.0
 ```
