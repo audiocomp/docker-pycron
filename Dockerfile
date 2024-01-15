@@ -8,12 +8,15 @@ RUN mkdir /app
 WORKDIR /app
 
 RUN apt-get update && \
+    apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
     cron \
     rsyslog \
     logrotate && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+RUN pip install --upgrade pip
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
