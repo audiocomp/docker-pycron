@@ -1,6 +1,6 @@
 set -ex
 
 USERNAME=audiocomp
-IMAGE=python
+IMAGE=pycron
 
 docker build --no-cache --network=host -t $USERNAME/$IMAGE:latest .

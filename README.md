@@ -1,18 +1,19 @@
 # docker-pycron
 
-![Docker Pulls](https://img.shields.io/docker/pulls/fronzbot/pycron.svg)
-![Github tag](https://img.shields.io/github/tag-date/fronzbot/docker-pycron.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/audiocomp/pycron.svg)
+![Docker Automated build](https://img.shields.io/docker/automated/audiocomp/pycron.svg)
+![Github tag](https://img.shields.io/github/tag-date/audiocomp/docker-pycron.svg)
 
 This is a generic python docker used to run custom scripts and what not.  [Docker Hub URL](https://hub.docker.com/r/audiocomp/pycron)
 
 ## Usage
 
-Please note that this docker uses Python 3.11-slim-bookworm and has the following packages installed:
+Please note that this docker uses python:3.11-alpine3.18 and has the following packages installed:
 
 ```
-cron
-rsyslog
+busybox-openrc
 logrotate
+rsyslog
 ```
 
 Additional packages can be installed in the docker using `apt-get install`, or you can request they be added to the docker image.
@@ -79,7 +80,7 @@ Each line represents a package and you can add as many as you'd like!
 By default, the following python packages are installed:
 
 ```
-ruamel.yaml==0.17.32
+ruamel.yaml==0.18.5
 python-crontab==3.0.0
 requests==2.31.0
 ```

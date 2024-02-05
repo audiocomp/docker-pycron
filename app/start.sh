@@ -1,6 +1,6 @@
 #!/bin/sh
-service rsyslog start
-service cron restart
+rsyslogd
+crond -l 2
 crontab -r
 
 # Install user-generated requirements files
@@ -16,6 +16,7 @@ then
     cp /app/example.py /work/example.py
 fi
 
+touch /var/spool/cron/crontabs/root
 python /app/run.py
 crontab /etc/cron.d/pycron
 

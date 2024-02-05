@@ -1,7 +1,7 @@
 set -ex
 
-USERNAME=fronzbot
-IMAGE=python
+USERNAME=audiocomp
+IMAGE=pycron
 
 git pull origin master
 
