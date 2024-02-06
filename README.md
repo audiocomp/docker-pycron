@@ -12,11 +12,12 @@ Please note that this docker uses python:3.11-alpine3.18 and has the following p
 
 ```
 busybox-openrc
+gcompat
 logrotate
 rsyslog
 ```
 
-Additional packages can be installed in the docker using `apt-get install`, or you can request they be added to the docker image.
+Additional packages can be installed in the docker using `apk add`, or you can request they be added to the docker image.
 
 ### Volume Maps
 
