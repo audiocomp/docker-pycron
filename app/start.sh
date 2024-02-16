@@ -1,6 +1,6 @@
 #!/bin/sh
 rsyslogd
-crond -l 2
+crond -l 6
 crontab -r
 
 # Install user-generated requirements files
