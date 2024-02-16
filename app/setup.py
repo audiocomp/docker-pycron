@@ -1,10 +1,10 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
-name = 'pycron'
-version = '0.0.1'
+NAME = 'pycron'
+VERSION = '0.0.1'
 
 setup(
-    name = name,
-    version = version,
+    name=NAME,
+    version=VERSION,
     packages=['pycron'],
 )
