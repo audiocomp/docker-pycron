@@ -1,11 +1,11 @@
-FROM python:3.11-alpine3.18
+FROM python:3.12-alpine3.18
 LABEL maintainer="Steve Brown https://github.com/audiocomp"
 
 # Install Additional Packages
 RUN apk add --no-cache -v ca-certificates busybox-openrc libstdc++ logrotate openssl rsyslog wget
 
 # Install GlibC
-RUN export GLIBC_VERSION=2.32-r0 \
+RUN export GLIBC_VERSION=2.34-r0 \
     && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
     && wget -q -O /tmp/glibc-${GLIBC_VERSION}.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk \
     && apk add --force-overwrite --no-cache -v /tmp/glibc-${GLIBC_VERSION}.apk \
