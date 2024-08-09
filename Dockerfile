@@ -2,7 +2,10 @@ FROM python:3.12-alpine3.18
 LABEL maintainer="Steve Brown https://github.com/audiocomp"
 
 # Install Additional Packages
+RUN apk update
+RUN apk upgrade --no-cache -v
 RUN apk add --no-cache -v ca-certificates busybox-openrc libstdc++ logrotate openssl rsyslog wget
+
 
 # Install GlibC
 RUN export GLIBC_VERSION=2.34-r0 \
