@@ -1,7 +1,6 @@
 #!/bin/sh
 rsyslogd
-crond -l 6
-crontab -r
+/etc/init.d/cron start
 
 # Install user-generated requirements files
 if [ -e /work/my_requirements.txt ]
