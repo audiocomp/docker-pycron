@@ -1,20 +1,10 @@
-FROM python:3.12-alpine3.18
+FROM python:3.13-slim
 LABEL maintainer="Steve Brown https://github.com/audiocomp"
 
 # Install Additional Packages
-RUN apk update
-RUN apk upgrade --no-cache -v
-RUN apk add --no-cache -v ca-certificates busybox-openrc libstdc++ logrotate openssl rsyslog wget
-
-
-# Install GlibC
-RUN export GLIBC_VERSION=2.34-r0 \
-    && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
-    && wget -q -O /tmp/glibc-${GLIBC_VERSION}.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk \
-    && apk add --force-overwrite --no-cache -v /tmp/glibc-${GLIBC_VERSION}.apk \
-    && wget -q -O /tmp/glibc-bin-${GLIBC_VERSION}.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}.apk \
-    && apk add --no-cache -v /tmp/glibc-bin-${GLIBC_VERSION}.apk \
-    && rm -v /tmp/*.apk
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get -y install rsyslog wget logrotate
 
 # Add Volumes
 VOLUME /work

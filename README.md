@@ -8,19 +8,13 @@ This is a generic python docker used to run custom scripts and what not.  [Docke
 
 ## Usage
 
-Please note that this docker uses python:3.11-alpine3.18 and has the following packages installed:
+Please note that this docker uses python:3.13-slim and has the following additional packages installed:
 
 ```sh
-busybox-openrc
-ca-certificates
-libstdc++
 logrotate
 rsyslog
 wget
-https://github.com/sgerrand/alpine-pkg-glibc
 ```
-
-Additional packages can be installed in the docker using `apk add`, or you can request they be added to the docker image.
 
 ### Volume Maps
 
@@ -72,7 +66,7 @@ LOGGER.error("Oh no, something went wrong!")
 
 ### Custom Python Packages
 
-If you want to install custom python packages without needing to perform a `pip install` on every docker restart, you can add a file called `my_requirements.txt` to your `/work` directory.  You may add packages here with a version number.  For example, If you want to install a specific version of the `sqlalchemy` but just want a minimum version of `requests`, your `my_requirements.txt` file would look like the following:
+If you want to install custom python packages without needing to perform a `pip install` on every docker run, you can add a file called `my_requirements.txt` to your `/work` directory.  You may add packages here with a version number.  For example, If you want to install a specific version of the `sqlalchemy` but just want a minimum version of `requests`, your `my_requirements.txt` file would look like the following:
 
 ```python
 sqlalchemy==1.2.12
@@ -84,7 +78,8 @@ Each line represents a package and you can add as many as you'd like!
 By default, the following python packages are installed:
 
 ```python
-ruamel.yaml==0.18.5
-python-crontab==3.0.0
-requests==2.31.0
+ruamel.yaml==0.18.10
+python-crontab==3.2.0
+requests==2.32.3
+setuptools==75.8.0
 ```
