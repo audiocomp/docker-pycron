@@ -1,7 +1,6 @@
 # docker-pycron
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/audiocomp/pycron.svg)
-![Docker Automated build](https://img.shields.io/docker/automated/audiocomp/pycron.svg)
 ![Github tag](https://img.shields.io/github/tag-date/audiocomp/docker-pycron.svg)
 
 This is a generic python docker used to run custom scripts and what not.  [Docker Hub URL](https://hub.docker.com/r/audiocomp/pycron)
@@ -81,5 +80,5 @@ By default, the following python packages are installed:
 ruamel.yaml==0.18.10
 python-crontab==3.2.0
 requests==2.32.3
-setuptools==75.8.0
+setuptools==78.1.0
 ```
