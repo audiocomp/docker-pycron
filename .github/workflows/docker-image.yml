@@ -1,14 +1,12 @@
-name: Publish Docker Image
+name: Publish Docker Image on merge
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ master ]
+    types: [ closed ]
 
 jobs:
   build:
+    if: github.event.pull_request.merged == true
     name: Build and Push Docker Image to DockerHub
     runs-on: ubuntu-latest
     permissions:
