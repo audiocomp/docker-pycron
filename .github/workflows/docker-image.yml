@@ -50,3 +50,12 @@ jobs:
           sbom: true
           provenance: mode=max
           tags: audiocomp/pycron:${{ env.VERSION }}
+
+      - name: Build and push Docker image with version-slim tag
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          sbom: true
+          provenance: mode=max
+          tags: audiocomp/pycron:${{ env.VERSION }}-slim
