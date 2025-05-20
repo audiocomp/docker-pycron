@@ -1,4 +1,4 @@
 ruamel.yaml==0.18.10
 python-crontab==3.2.0
 requests==2.32.3
-setuptools==78.1.0
+setuptools==78.1.1
