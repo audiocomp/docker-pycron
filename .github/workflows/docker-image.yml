@@ -34,7 +34,7 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
@@ -43,7 +43,7 @@ jobs:
           tags: audiocomp/pycron:latest
 
       - name: Build and push Docker image with version tag
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
@@ -52,7 +52,7 @@ jobs:
           tags: audiocomp/pycron:${{ env.VERSION }}
 
       - name: Build and push Docker image with version-slim tag
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
