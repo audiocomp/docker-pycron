@@ -77,8 +77,8 @@ Each line represents a package and you can add as many as you'd like!
 By default, the following python packages are installed:
 
 ```python
-ruamel.yaml==0.18.10
-python-crontab==3.2.0
-requests==2.32.3
-setuptools==78.1.0
+ruamel.yaml==0.19.1
+python-crontab==3.3.0
+requests==2.32.5
+setuptools==82.0.1
 ```
