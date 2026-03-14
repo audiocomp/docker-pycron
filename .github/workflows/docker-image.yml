@@ -59,3 +59,10 @@ jobs:
           sbom: true
           provenance: mode=max
           tags: audiocomp/pycron:${{ env.VERSION }}-slim
+
+      - name: Update repo description
+        uses: peter-evans/dockerhub-description@v5
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: audiocomp/pycron
