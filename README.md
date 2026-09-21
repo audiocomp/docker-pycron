@@ -7,7 +7,7 @@ This is a generic python docker used to run custom scripts and what not.  [Docke
 
 ## Usage
 
-Please note that this docker uses python:3.13-slim and has the following additional packages installed:
+Please note that this docker uses python:3.14-slim and has the following additional packages installed:
 
 ```sh
 logrotate
